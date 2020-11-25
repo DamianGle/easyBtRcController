@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">easyBtRcController</string>
+    <string name="button_name">Refresh</string>
 </resources>
