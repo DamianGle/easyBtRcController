@@ -7,48 +7,53 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:orientation="vertical"
+
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:gravity="center"
-        >
-    <Button
-        android:id="@+id/set_bt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SET BT"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        style="@style/Widget.MaterialComponents.Button.Icon"
-        app:icon="@android:drawable/stat_sys_data_bluetooth"
-        />
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/android_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <Button
+            android:id="@+id/set_bt"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SET BT"
+            app:icon="@android:drawable/stat_sys_data_bluetooth"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
 
 
-    <Button
-        android:id="@+id/btn_control"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GO CONTROL"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/set_bt"
-        style="@style/Widget.MaterialComponents.Button.Icon"
-        app:icon="@android:drawable/ic_dialog_map"
-        />
+        <Button
+            android:id="@+id/btn_control"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GO CONTROL"
+            app:icon="@android:drawable/ic_dialog_map"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/set_bt" />
 
-    <Button
-        android:id="@+id/btn_change_theme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CHANGE THEME"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_control"
-        style="@style/Widget.MaterialComponents.Button.Icon"
-        app:icon="@android:drawable/ic_menu_edit"
-        />
+        <Button
+            android:id="@+id/btn_change_theme"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CHANGE THEME"
+            app:icon="@android:drawable/ic_menu_edit"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_control" />
 
         <TextView
             android:id="@+id/BtDevAdr"
@@ -61,9 +66,9 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="165dp"
+            android:layout_width="289dp"
+            android:layout_height="117dp"
             app:srcCompat="@drawable/rc_car" />
-
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
