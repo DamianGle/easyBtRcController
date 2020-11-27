@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">easyBtRcController</string>
     <string name="button_name">Refresh</string>
+    <string name="choose_theme_text">Choose theme</string>
+    <string name="txt_title">Hello Android Theme!</string>
+    <string name="change_theme_txt">Change theme</string>
+
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="disconnect">Disconnect</string>
 </resources>

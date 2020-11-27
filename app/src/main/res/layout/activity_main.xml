@@ -10,7 +10,39 @@
         android:id="@+id/set_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="576dp"
         android:text="SET BT"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="286dp" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <Button
+        android:id="@+id/btn_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="GO CONTROL"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/set_bt" />
+
+    <Button
+        android:id="@+id/btn_change_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CHANGE THEME"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_control" />
+
+    <TextView
+        android:id="@+id/BtDevAdr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SET BT ADDRESS"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_change_theme" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

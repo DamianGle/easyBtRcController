@@ -63,8 +63,9 @@ class BtControlActivity : AppCompatActivity()
                 val address: String = device.address
 
                 val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra(EXTRA_ADDRESS, address)   /////////////////////////////////////////////////////////////////
+                intent.putExtra(EXTRA_ADDRESS, address)
                 startActivity(intent)
+                finish()
             }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
