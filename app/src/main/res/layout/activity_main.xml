@@ -6,26 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        >
     <Button
         android:id="@+id/set_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="576dp"
         android:text="SET BT"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="MissingConstraints" />
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        app:icon="@android:drawable/stat_sys_data_bluetooth"
+        />
 
 
     <Button
         android:id="@+id/btn_control"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
         android:text="GO CONTROL"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/set_bt" />
+        app:layout_constraintTop_toBottomOf="@+id/set_bt"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        app:icon="@android:drawable/ic_dialog_map"
+        />
 
     <Button
         android:id="@+id/btn_change_theme"
@@ -34,7 +45,10 @@
         android:text="CHANGE THEME"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_control" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_control"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        app:icon="@android:drawable/ic_menu_edit"
+        />
 
     <TextView
         android:id="@+id/BtDevAdr"
@@ -44,5 +58,5 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_change_theme" />
-
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
