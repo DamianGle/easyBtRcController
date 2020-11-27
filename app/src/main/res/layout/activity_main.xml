@@ -50,13 +50,20 @@
         app:icon="@android:drawable/ic_menu_edit"
         />
 
-    <TextView
-        android:id="@+id/BtDevAdr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SET BT ADDRESS"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_change_theme" />
+        <TextView
+            android:id="@+id/BtDevAdr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SET BT ADDRESS"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_change_theme" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="165dp"
+            app:srcCompat="@drawable/rc_car" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
