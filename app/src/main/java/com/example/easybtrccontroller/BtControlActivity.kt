@@ -26,8 +26,6 @@ class BtControlActivity : AppCompatActivity()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_btcontrol)
-
-
         m_bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
         if(m_bluetoothAdapter == null) {
             toast("this device doesn't support bluetooth")
@@ -38,10 +36,12 @@ class BtControlActivity : AppCompatActivity()
             startActivityForResult(enableBluetoothIntent, REQUEST_ENABLE_BLUETOOTH)
         }
         select_device_refresh.setOnClickListener{ pairedDeviceList() }
-
+        val intent = Intent(this, MainActivity::class.java)
+        back_device_refresh.setOnClickListener {
+            startActivity(intent)
+            finish()
+        }
     }
-
-
     private fun pairedDeviceList() {
         m_pairedDevices = m_bluetoothAdapter!!.bondedDevices
         val list: ArrayList<BluetoothDevice> = ArrayList()
@@ -82,5 +82,4 @@ class BtControlActivity : AppCompatActivity()
             }
         }
     }
-
 }
