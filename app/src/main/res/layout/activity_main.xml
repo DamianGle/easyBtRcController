@@ -69,6 +69,17 @@
             android:layout_width="289dp"
             android:layout_height="117dp"
             app:srcCompat="@drawable/rc_car" />
+
+        <Button
+            android:id="@+id/btn_exit"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXIT"
+            app:icon="@android:drawable/ic_delete"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

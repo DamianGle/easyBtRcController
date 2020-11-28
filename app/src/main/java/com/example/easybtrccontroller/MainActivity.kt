@@ -9,34 +9,32 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var m_address: String
     override fun onCreate(savedInstanceState: Bundle?) {
-
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val intent = Intent(this, BtControlActivity::class.java)
-
         set_bt.setOnClickListener {
             startActivity(intent)
             finish()
         }
 
-
-
         val intent1 = Intent(this, SteeringActivity::class.java)
+        btn_control.setOnClickListener {
+            intent1.putExtra(BtControlActivity.EXTRA_ADDRESS, m_address)
+            startActivity(intent1)
+            finish()
+        }
 
-            btn_control.setOnClickListener {
-                intent1.putExtra(BtControlActivity.EXTRA_ADDRESS, m_address)
-                startActivity(intent1)
-                finish()
-            }
-
-
+        btn_exit.setOnClickListener{
+            moveTaskToBack(true)
+            exitProcess(-1)
+        }
 
         checkTheme()
         btn_change_theme.setOnClickListener { chooseThemeDialog() }
