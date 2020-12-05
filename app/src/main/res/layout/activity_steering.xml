@@ -36,16 +36,16 @@
         />
 
     <GridLayout
-        android:layout_width="114dp"
-        android:layout_height="132dp"
+        android:layout_width="161dp"
+        android:layout_height="162dp"
         tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="194dp">
+        tools:layout_editor_absoluteY="164dp">
 
         <Button
             android:id="@+id/turn_right"
             style="@style/Widget.MaterialComponents.Button"
-            android:layout_width="37dp"
-            android:layout_height="37dp"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
             android:layout_row="1"
             android:layout_column="2"
             android:minWidth="0dp"
@@ -55,7 +55,7 @@
             app:icon="@android:drawable/ic_input_add"
             app:iconGravity="textStart"
             app:iconPadding="0dp"
-            app:iconSize="76dp"
+            app:iconSize="96dp"
             app:iconTint="#FFC107"
             app:layout_column="0"
             app:layout_row="0" />
@@ -63,8 +63,8 @@
         <Button
             android:id="@+id/turn_left"
             style="@style/Widget.MaterialComponents.Button"
-            android:layout_width="37dp"
-            android:layout_height="37dp"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
             android:layout_row="1"
             android:layout_column="0"
             android:minWidth="0dp"
@@ -74,7 +74,7 @@
             app:icon="@android:drawable/checkbox_off_background"
             app:iconGravity="textStart"
             app:iconPadding="0dp"
-            app:iconSize="50dp"
+            app:iconSize="60dp"
             app:iconTint="#850374"
             app:layout_column="1"
             app:layout_row="1" />
@@ -82,8 +82,8 @@
         <Button
             android:id="@+id/go_up"
             style="@style/Widget.MaterialComponents.Button"
-            android:layout_width="40dp"
-            android:layout_height="42dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_row="0"
             android:layout_column="1"
             android:minWidth="0dp"
@@ -93,14 +93,14 @@
             app:icon="@android:drawable/ic_media_play"
             app:iconGravity="textStart"
             app:iconPadding="0dp"
-            app:iconSize="49dp"
+            app:iconSize="60dp"
             app:iconTint="#CF0E24" />
 
         <Button
             android:id="@+id/go_down"
             style="@style/Widget.MaterialComponents.Button"
-            android:layout_width="37dp"
-            android:layout_height="37dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_row="2"
             android:layout_column="1"
             android:minWidth="0dp"
@@ -110,7 +110,7 @@
             app:icon="@android:drawable/ic_delete"
             app:iconGravity="textStart"
             app:iconPadding="0dp"
-            app:iconSize="55dp"
+            app:iconSize="65dp"
             app:iconTint="#0FAA03" />
 
     </GridLayout>
