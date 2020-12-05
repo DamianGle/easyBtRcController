@@ -10,7 +10,7 @@ import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.example.easybtrccontroller.BtControlActivity.Companion.EXTRA_ADDRESS
+import io.github.controlwear.virtual.joystick.android.JoystickView.OnMoveListener
 import kotlinx.android.synthetic.main.activity_steering.*
 import java.io.IOException
 import java.util.*
@@ -32,10 +32,18 @@ class SteeringActivity : AppCompatActivity()
         setContentView(R.layout.activity_steering)
         m_address = intent.getStringExtra(BtControlActivity.EXTRA_ADDRESS)
         ConnectToDevice(this).execute()
-        turn_left.setOnClickListener { sendCommand("a") }
-        control_led_on.setOnClickListener { sendCommand("a") }
-        control_led_off.setOnClickListener { sendCommand("b") }
+
+        turn_left.setOnClickListener { sendCommand("turn_left\r\n") }
+        turn_right.setOnClickListener { sendCommand("turn_right\r\n") }
+        go_up.setOnClickListener { sendCommand("go_up\r\n") }
+        go_down.setOnClickListener { sendCommand("go_down\r\n") }
+
         control_led_disconnect.setOnClickListener { disconnect() }
+
+        joyStick.setOnMoveListener(OnMoveListener { angle, strength ->
+            sendCommand("Angle:"+ angle.toString()+ ";Strength:" + strength.toString() + "\r\n")
+        })
+
 
     }
     private fun sendCommand(input: String) {

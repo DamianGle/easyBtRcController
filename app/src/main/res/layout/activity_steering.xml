@@ -6,24 +6,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <Button
-        android:id="@+id/control_led_on"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/on"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        />
-
-    <Button
-        android:id="@+id/control_led_off"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/off"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/control_led_on"
-        />
 
     <Button
         android:id="@+id/control_led_disconnect"
@@ -32,14 +14,20 @@
         android:text="@string/disconnect"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/control_led_off"
-        />
+        tools:layout_editor_absoluteY="32dp" />
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal|center_vertical|left"
+        android:orientation="horizontal"
+        >
     <GridLayout
         android:layout_width="161dp"
         android:layout_height="162dp"
         tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="164dp">
+        tools:layout_editor_absoluteY="164dp"
+        >
 
         <Button
             android:id="@+id/turn_right"
@@ -114,5 +102,27 @@
             app:iconTint="#0FAA03" />
 
     </GridLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal|center_vertical|right"
+        android:orientation="horizontal"
+        >
 
+        <io.github.controlwear.virtual.joystick.android.JoystickView
+            android:id="@+id/joyStick"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:gravity="center_horizontal|center_vertical|right"
+            app:JV_backgroundColor="#009688"
+            app:JV_backgroundSizeRatio="60%"
+            app:JV_borderColor="#00796B"
+            app:JV_borderWidth="4dp"
+            app:JV_buttonColor="#FF6E40"
+            app:JV_buttonSizeRatio="20%"
+            app:JV_fixedCenter="false"
+            tools:layout_editor_absoluteX="508dp"
+            tools:layout_editor_absoluteY="227dp" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
