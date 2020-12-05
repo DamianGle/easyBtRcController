@@ -28,6 +28,7 @@
             android:layout_height="wrap_content"
             android:text="SET BT"
             app:icon="@android:drawable/stat_sys_data_bluetooth"
+            app:iconTint="#FFC107"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
 
@@ -39,6 +40,7 @@
             android:layout_height="wrap_content"
             android:text="GO CONTROL"
             app:icon="@android:drawable/ic_dialog_map"
+            app:iconTint="#0FAA03"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/set_bt" />
@@ -49,6 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CHANGE THEME"
+            app:iconTint="#850374"
             app:icon="@android:drawable/ic_menu_edit"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -75,6 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="EXIT"
+            app:iconTint="#CF0E24"
             app:icon="@android:drawable/ic_delete"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

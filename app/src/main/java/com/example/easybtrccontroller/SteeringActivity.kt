@@ -32,6 +32,7 @@ class SteeringActivity : AppCompatActivity()
         setContentView(R.layout.activity_steering)
         m_address = intent.getStringExtra(BtControlActivity.EXTRA_ADDRESS)
         ConnectToDevice(this).execute()
+        turn_left.setOnClickListener { sendCommand("a") }
         control_led_on.setOnClickListener { sendCommand("a") }
         control_led_off.setOnClickListener { sendCommand("b") }
         control_led_disconnect.setOnClickListener { disconnect() }
