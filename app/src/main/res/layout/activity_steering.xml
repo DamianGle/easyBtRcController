@@ -14,13 +14,19 @@
         android:text="@string/disconnect"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="32dp" />
+        tools:layout_editor_absoluteY="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:gravity="center_horizontal|center_vertical|left"
         android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="30dp"
         >
     <GridLayout
         android:layout_width="161dp"
@@ -101,28 +107,49 @@
             app:iconSize="65dp"
             app:iconTint="#0FAA03" />
 
+        <Button
+            android:id="@+id/stop"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            app:backgroundTint="@android:color/transparent"
+            app:icon="@android:drawable/btn_star_big_on"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconSize="50dp"
+            app:iconTint="#E91E63"
+            app:layout_column="0"
+            app:layout_row="0" />
+
     </GridLayout>
+
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:gravity="center_horizontal|center_vertical|right"
         android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         >
 
         <io.github.controlwear.virtual.joystick.android.JoystickView
             android:id="@+id/joyStick"
             android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_height="258dp"
             android:gravity="center_horizontal|center_vertical|right"
-            app:JV_backgroundColor="#009688"
+            app:JV_backgroundColor="#7A807F"
             app:JV_backgroundSizeRatio="60%"
-            app:JV_borderColor="#00796B"
-            app:JV_borderWidth="4dp"
-            app:JV_buttonColor="#FF6E40"
-            app:JV_buttonSizeRatio="20%"
-            app:JV_fixedCenter="false"
-            tools:layout_editor_absoluteX="508dp"
-            tools:layout_editor_absoluteY="227dp" />
+            app:JV_borderColor="#FFC107"
+            app:JV_borderWidth="2dp"
+            app:JV_buttonColor="#0B0300"
+            app:JV_buttonSizeRatio="10%"
+            app:JV_fixedCenter="false" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

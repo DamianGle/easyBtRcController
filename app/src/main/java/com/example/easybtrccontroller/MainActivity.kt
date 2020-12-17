@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
-import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -16,9 +15,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var m_address: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main)  // Set Main layout
 
-        val intent = Intent(this, BtControlActivity::class.java)
+        val intent = Intent(this, BtControlActivity::class.java)    // Button's Listeners
         set_bt.setOnClickListener {
             startActivity(intent)
             finish()
@@ -39,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         checkTheme()
         btn_change_theme.setOnClickListener { chooseThemeDialog() }
 
-        val extras = getIntent().extras
+        val extras = getIntent().extras                 // Get BT address from Set BT class
         if (extras != null) {
             m_address = extras.getString(BtControlActivity.EXTRA_ADDRESS).toString()
             if(BtDevAdr.text != "SET BT ASDDRESS") {
@@ -49,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun chooseThemeDialog() {
+    private fun chooseThemeDialog() {               // Change Item (Dark or Light or Default)
 
         val builder = AlertDialog.Builder(this)
         builder.setTitle(getString(R.string.choose_theme_text))
@@ -103,7 +102,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-class MyPreferences(context: Context?) {
+class MyPreferences(context: Context?) {                        // Safe preferences to memory
 
     companion object {
         private const val DARK_STATUS = "DARK_STATUS"
@@ -113,7 +112,4 @@ class MyPreferences(context: Context?) {
 
     var darkMode = preferences.getInt(DARK_STATUS, 0)
         set(value) = preferences.edit().putInt(DARK_STATUS, value).apply()
-
-
-
 }

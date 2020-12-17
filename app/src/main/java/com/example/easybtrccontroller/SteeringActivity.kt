@@ -17,7 +17,7 @@ import java.util.*
 
 class SteeringActivity : AppCompatActivity()
 {
-    companion object {
+    companion object {  // Variables to set BT connections
         var m_myUUID: UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB")
         var m_bluetoothSocket: BluetoothSocket? = null
         lateinit var m_progress: ProgressDialog
@@ -32,16 +32,17 @@ class SteeringActivity : AppCompatActivity()
         setContentView(R.layout.activity_steering)
         m_address = intent.getStringExtra(BtControlActivity.EXTRA_ADDRESS)
         ConnectToDevice(this).execute()
-
-        turn_left.setOnClickListener { sendCommand("turn_left\r\n") }
-        turn_right.setOnClickListener { sendCommand("turn_right\r\n") }
-        go_up.setOnClickListener { sendCommand("go_up\r\n") }
-        go_down.setOnClickListener { sendCommand("go_down\r\n") }
+        // Steering buttons and JoyStick
+        turn_left.setOnClickListener { sendCommand("L") }
+        turn_right.setOnClickListener { sendCommand("P") }
+        go_up.setOnClickListener { sendCommand("U") }
+        go_down.setOnClickListener { sendCommand("D") }
+        stop.setOnClickListener { sendCommand("S") }
 
         control_led_disconnect.setOnClickListener { disconnect() }
-
+        // Send Angle and Strength from JoyStick
         joyStick.setOnMoveListener(OnMoveListener { angle, strength ->
-            sendCommand("Angle:"+ angle.toString()+ ";Strength:" + strength.toString() + "\r\n")
+            sendCommand("A"+ angle.toString()+ "F" + strength.toString())
         })
 
 
@@ -56,7 +57,7 @@ class SteeringActivity : AppCompatActivity()
         }
     }
 
-    private fun disconnect() {
+    private fun disconnect() { // Disconnect BT connection
         if (m_bluetoothSocket != null) {
             try {
                 m_bluetoothSocket!!.close()
@@ -75,7 +76,7 @@ class SteeringActivity : AppCompatActivity()
     {
         private var connectSuccess: Boolean = true
         private val context: Context = c
-
+                                                                        // Connection processing
         override fun onPreExecute() {
             super.onPreExecute()
             m_progress = ProgressDialog.show(context, "Connecting...", "please wait")

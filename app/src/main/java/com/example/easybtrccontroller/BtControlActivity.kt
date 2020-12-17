@@ -14,7 +14,7 @@ import org.jetbrains.anko.toast
 
 class BtControlActivity : AppCompatActivity()
 {
-    private var m_bluetoothAdapter: BluetoothAdapter? = null
+    private var m_bluetoothAdapter: BluetoothAdapter? = null    // Basic variables
     private lateinit var m_pairedDevices: Set<BluetoothDevice>
     private val REQUEST_ENABLE_BLUETOOTH = 1
 
@@ -25,24 +25,24 @@ class BtControlActivity : AppCompatActivity()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_btcontrol)
+        setContentView(R.layout.activity_btcontrol)                 // Set layout
         m_bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
         if(m_bluetoothAdapter == null) {
             toast("this device doesn't support bluetooth")
             return
         }
-        if(!m_bluetoothAdapter!!.isEnabled) {
+        if(!m_bluetoothAdapter!!.isEnabled) {                       // Check Bluetooth  is on
             val enableBluetoothIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
             startActivityForResult(enableBluetoothIntent, REQUEST_ENABLE_BLUETOOTH)
         }
         select_device_refresh.setOnClickListener{ pairedDeviceList() }
         val intent = Intent(this, MainActivity::class.java)
-        back_device_refresh.setOnClickListener {
+        back_device_refresh.setOnClickListener {            // Get BT device MAC address
             startActivity(intent)
             finish()
         }
     }
-    private fun pairedDeviceList() {
+    private fun pairedDeviceList() {                            // Check if paired
         m_pairedDevices = m_bluetoothAdapter!!.bondedDevices
         val list: ArrayList<BluetoothDevice> = ArrayList()
 
@@ -62,14 +62,14 @@ class BtControlActivity : AppCompatActivity()
                 val device: BluetoothDevice = list[position]
                 val address: String = device.address
 
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, MainActivity::class.java) // Send BT address to MainClass
                 intent.putExtra(EXTRA_ADDRESS, address)
                 startActivity(intent)
                 finish()
             }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
+        super.onActivityResult(requestCode, resultCode, data) // Get information about BT status
         if (requestCode == REQUEST_ENABLE_BLUETOOTH) {
             if (resultCode == Activity.RESULT_OK) {
                 if (m_bluetoothAdapter!!.isEnabled) {
